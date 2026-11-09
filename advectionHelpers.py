@@ -126,6 +126,7 @@ def compareSchemeSnapshots(init, schemes, outFile, nx=40, nt=10,
         #Saved as basic_cosineBell.pdf and basic_squarePulse.pdf
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
 #Error as a function of Courant number fot FTBS, FTCS, CTCS, cubicSL
 def errorVsCourant(init, schemes, outFile, nx=40,
@@ -173,6 +174,7 @@ def errorVsCourant(init, schemes, outFile, nx=40,
 
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
     return cValues, errors
 
@@ -256,6 +258,7 @@ def convergenceStudy(init, schemes, outFile,
     # Save and display the plot
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
     # Return grid spacings and errors
     return dxValues, errors
@@ -312,6 +315,7 @@ def plotErrorVsCourant(schemes, outFile, init, nx=40):
 
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
 # Check the exponents in  error ~ dx^(d+1) / dt
 def errors_SL(schemes, outFile, init):
@@ -372,6 +376,7 @@ def errors_SL(schemes, outFile, init):
     plt.tight_layout()
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
 ###########################
 #Experiment Z, Appendix C
@@ -420,5 +425,6 @@ def variance_conservation(init, schemes, outFile,nx=40, nt=100, u=1.0,
 
     os.makedirs("plots", exist_ok=True)
     plt.savefig(f"plots/{outFile}", bbox_inches="tight")
+    plt.close()
 
     return times, results
